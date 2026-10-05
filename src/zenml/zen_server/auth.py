@@ -912,9 +912,10 @@ def authenticate_external_user(
                     email_opted_in=True,
                     active=True,
                     email=external_user.email,
-                    is_admin=external_user.is_admin,
+                    is_admin=external_user.is_superuser,
                     avatar_url=external_user.avatar_url,
                     external_user_id=external_user.id,
+                    oidc_claims=external_user.oidc_claims,
                 ),
             )
         else:
@@ -954,8 +955,9 @@ def authenticate_external_user(
                     email_opted_in=True,
                     active=True,
                     email=external_user.email,
-                    is_admin=external_user.is_admin,
+                    is_admin=external_user.is_superuser,
                     avatar_url=external_user.avatar_url,
+                    oidc_claims=external_user.oidc_claims,
                 )
             )
 
